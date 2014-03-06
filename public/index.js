@@ -39,16 +39,21 @@ var refreshSources = function($scope) {
 
   $('.menu-item.source').remove();
 
-  $.each($scope.sources, function(key, value) {
-    strang = value.source.title + " (" + value.source.url + ")";
-    $('.source-inner').append("<div class='menu-item source' data-index='" + key + "'>" + strang + "</div>");
-  });
+  if ($scope.sources.length < 1) {
+    $('.source-inner').append("<div class='source zero-state placeholder'><span>No " +
+                            "source apps registered</span></div>");
+  }
+  else {
+    $('.source.zero-state.placeholder').remove();
+    $.each($scope.sources, function(key, value) {
+      strang = value.source.title + " (" + value.source.url + ")";
+      $('.source-inner').append("<div class='menu-item source' data-index='" + key + "'>" + strang + "</div>");
+    });
+  }
 }
 
 var selectParent = function($scope) {
-  console.log("ID", $scope);
   var index = getIndexFromID($scope);
-  console.log("INDEX", index);
   $('.source-inner').find("[data-index=" + index + "]").click();
 }
 
