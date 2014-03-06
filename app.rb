@@ -32,3 +32,18 @@ get '/sources' do
 
   @sources.to_json
 end
+
+post '/source/new' do
+  content_type :json
+  @source = Source.create(params)
+
+  @source.to_json
+end
+
+post '/source/:id/destination/new' do
+  content_type :json
+  @source = Source.find(params[:id])
+  @destination = @source.destinations.create(params[:destination])
+
+  @destination.to_json
+end

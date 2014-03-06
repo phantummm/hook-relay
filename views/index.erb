@@ -20,23 +20,26 @@
         </div>
         <div class="add-form">
           <div class="big-plus"><img src="/plus-icon-large.png"></div>
-          <form id="add-destination">
+          <form id="add-source">
             <section class="form-row">
-              <div><label for="destination_title">name</label></div>
-              <div><input id="destination_title" type="text" name="destination[title]"></div>
+              <div><label for="source-title">name</label></div>
+              <div><input id="source-title" type="text" name="source[title]"></div>
             </section>
             <section class="form-row">
-              <div><label for="destination_url">url</label></div>
-                <div><input id="destination_url" type="text" name="destination[url]"></div>
+              <div><label for="source-url">url</label></div>
+                <div><input id="source-url" type="text" name="source[url]"></div>
             </section>
             <section class="form-row">
               <div>&nbsp;</div>
               <div>
-                <button class="save-form active">save</button>
+                <button class="save-form source active">save</button>
                 <button class="dismiss-form">cancel</button>
               </div>
             </section>
           </form>
+        </div>
+        <div class="menu-item source placeholder">
+          <span>Loading...</span>
         </div>
       </div>
     </div>
@@ -50,23 +53,23 @@
           <div class="big-plus"><img src="/plus-icon-large.png"></div>
           <form id="add-destination">
             <section class="form-row">
-              <div><label for="destination_title">name</label></div>
-              <div><input id="destination_title" type="text" name="destination[title]"></div>
+              <div><label for="destination-title">name</label></div>
+              <div><input id="destination-title" type="text" name="destination[title]"></div>
             </section>
             <section class="form-row">
-              <div><label for="destination_url">url</label></div>
-                <div><input id="destination_url" type="text" name="destination[url]"></div>
+              <div><label for="destination-url">url</label></div>
+                <div><input id="destination-url" type="text" name="destination[url]"></div>
             </section>
             <section class="form-row">
               <div>&nbsp;</div>
               <div>
-                <button class="save-form active">save</button>
+                <button class="save-form destination active">save</button>
                 <button class="dismiss-form">cancel</button>
               </div>
             </section>
           </form>
         </div>
-        <div class="menu-item destination placeholder">
+        <div class="destination placeholder">
           <span>Please select a source...</span>
         </div>
       </div>
