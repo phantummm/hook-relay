@@ -10,16 +10,24 @@ body {
 
 div.header {
   width: 100%;
+  max-width: 960px;
   height: 50px;
-  margin: 50px 0 20px 0;
+  margin: 50px auto 20px auto;
   text-align: center;
 
   h1 {
     font-family: 'Archivo Black', sans-serif;
+
+    span {
+      color: #FF6600;
+    }
   }
 }
 
 div.container {
+  max-width: 960px;
+  margin: 0 auto;
+
   > div {
     width: 50%;
     display: inline-block;
@@ -35,12 +43,37 @@ div.container {
     }
 
     div.source-inner {
+      position: relative;
       margin-right: 20px;
-      border: 3px solid #000;
-      border-top: 10px solid #000;
+      border: 5px solid #000;
+      border-top: 1px solid #000;
       border-bottom: 10px solid #000;
       border-radius: 2px;
     }
+  }
+
+  div.plus-icon {
+    z-index: 100;
+    position: absolute;
+    top: 22px;
+    right: 17px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  div.x-icon {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  div.add-destination-icon {
+    display: none;
   }
 
   div.destination-box {
@@ -49,12 +82,26 @@ div.container {
       padding: 5px 0 1px 20px;
       background-color: #000;
       color: #fff;
+
+      span {
+        font-size: 10px;
+        font-style: italic;
+        padding-left: 10px;
+        letter-spacing: 2px;
+
+        span.app-title {
+          padding: 0;
+          color: #FF6600;
+          font-size: 11px;
+        }
+      }
     }
 
     div.destination-inner {
+      position: relative;
       margin-left: 20px;
-      border: 3px solid #000;
-      border-top: 10px solid #000;
+      border: 5px solid #000;
+      border-top: 1px solid #000;
       border-bottom: 10px solid #000;
       border-radius: 2px;
     }
@@ -64,14 +111,145 @@ div.container {
     width: 100%;
     padding: 10px;
     cursor: pointer;
+    text-align: right;
 
     &:not(:last-child) {
       border-bottom: 1px solid #eee;
+
+      &:hover {
+        border-bottom: 1px solid #000;
+      }
     }
 
     &:hover {
       color: #fff;
       background-color: #000;
+    }
+  }
+
+  div.menu-item.destination {
+    cursor: auto;
+
+    &:hover {
+      color: #000;
+      background-color: #fff;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+
+  div.selected {
+    color: #fff;
+    background-color: #000;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  div.placeholder {
+    height: 60px;
+    text-align: center;
+    line-height: 43px;
+
+    span {
+      color: #bbb;
+      font-style: italic;
+    }
+
+    &:hover {
+      color: #bbb;
+      background-color: #fff;
+      cursor: auto;
+    }
+  }
+
+  div.add-form {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    height: 130px;
+    display: none;
+    padding-top: 20px;
+    position: relative;
+
+    div.big-plus {
+      position: absolute;
+      left: 41px;
+      top: 28px;
+      z-index: 100;
+      height: 50px;
+      width: 50px;
+
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    section.form-row {
+      div:first-child {
+        text-align: right;
+        padding-top: 6px;
+      }
+
+      div {
+        display: inline-block;
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+
+        label {
+          letter-spacing: 2px;
+        }
+
+        input[type=text] {
+          width: 100%;
+          height: 25px;
+          border-radius: 2px;
+          padding: 2px;
+        }
+
+        button {
+          display: inline-block;
+          float: left;
+          width: 48%;
+          margin-top: 5px;
+          height: 25px;
+          border-radius: 2px;
+          border: 1px solid #aaa;
+          background-color: #aaa;
+          cursor: pointer;
+          font-size: 12px;
+          letter-spacing: 2px;
+
+          &:hover {
+            background-color: #444;
+            border: 1px solid #fff;
+            color: #fff;
+          }
+
+          &:first-child {
+            margin-right: 4%;
+          }
+        }
+
+        button.active {
+          background-color: #FF6600;
+          color: #fff;
+          border: 1px solid #FF6600;
+
+          &:hover {
+            background-color: #FF9933;
+          }
+        }
+      }
     }
   }
 }

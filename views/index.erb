@@ -9,20 +9,65 @@
 </head>
 <body>
   <div class="header">
-    <h1>hook relay</h1>
+    <h1>hook rel<span>a</span>y</h1>
   </div>
   <div class="container">
     <div class="source-box">
       <div class="source-inner">
+        <div class="plus-icon"><img src="/plus-icon.png"></div>
         <div class="source-title">
           <h3>registered apps</h3>
+        </div>
+        <div class="add-form">
+          <div class="big-plus"><img src="/plus-icon-large.png"></div>
+          <form id="add-destination">
+            <section class="form-row">
+              <div><label for="destination_title">name</label></div>
+              <div><input id="destination_title" type="text" name="destination[title]"></div>
+            </section>
+            <section class="form-row">
+              <div><label for="destination_url">url</label></div>
+                <div><input id="destination_url" type="text" name="destination[url]"></div>
+            </section>
+            <section class="form-row">
+              <div>&nbsp;</div>
+              <div>
+                <button class="save-form active">save</button>
+                <button class="dismiss-form">cancel</button>
+              </div>
+            </section>
+          </form>
         </div>
       </div>
     </div>
     <div class="destination-box">
       <div class="destination-inner">
+        <div class="plus-icon add-destination-icon"><img src="/plus-icon.png"></div>
         <div class="destination-title">
           <h3>destinations</h3>
+        </div>
+        <div class="add-form">
+          <div class="big-plus"><img src="/plus-icon-large.png"></div>
+          <form id="add-destination">
+            <section class="form-row">
+              <div><label for="destination_title">name</label></div>
+              <div><input id="destination_title" type="text" name="destination[title]"></div>
+            </section>
+            <section class="form-row">
+              <div><label for="destination_url">url</label></div>
+                <div><input id="destination_url" type="text" name="destination[url]"></div>
+            </section>
+            <section class="form-row">
+              <div>&nbsp;</div>
+              <div>
+                <button class="save-form active">save</button>
+                <button class="dismiss-form">cancel</button>
+              </div>
+            </section>
+          </form>
+        </div>
+        <div class="menu-item destination placeholder">
+          <span>Please select a source...</span>
         </div>
       </div>
     </div>
