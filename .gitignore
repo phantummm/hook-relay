@@ -1,3 +1,4 @@
 .env
 Gemfile.lock
 *.db
+.sass-cache/
