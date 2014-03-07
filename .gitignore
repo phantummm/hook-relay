@@ -1,5 +1,4 @@
 .env
-Gemfile.lock
 *.db
 .sass-cache/
 .DS_Store
