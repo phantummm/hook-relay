@@ -7,7 +7,7 @@ configure :development do
   set :database, "sqlite3:///hook_relay.db"
 end
 
-unless ENV_RACK['RACK_ENV'] == "development" do
+unless ENV_RACK['RACK_ENV'] == "development"
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 end
 
