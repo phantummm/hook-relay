@@ -18,13 +18,17 @@ get "/css/index.css" do
   scss :index_style
 end
 
-# post '/relay' do
-#   source = Source.where(:url => params[:url])
+post '/relay' do
+  pp params
 
-#   source.destinations.each do |destination|
-#     destination.send(params)
-#   end
-# end
+  source = Source.find_by(:url => params[:url]) || nil
+
+  unless !source
+    source.destinations.each {|d| d.send_relay(params) }
+  end
+
+  status 200
+end
 
 get '/sources' do
   content_type :json
