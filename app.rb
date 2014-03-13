@@ -36,7 +36,7 @@ end
 
 get '/sources' do
   content_type :json
-  generate_sources
+  @sources = Source.generate_sources
 
   @sources.to_json
 end
